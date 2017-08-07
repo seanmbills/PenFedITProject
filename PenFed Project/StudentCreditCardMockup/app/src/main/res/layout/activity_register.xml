@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/firstNameEntry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="10dp"
+        android:width="150dp"
+        android:ems="10"
+        android:gravity="center_horizontal|center"
+        android:hint="First Name..."
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/lastNameEntry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="25dp"
+        android:width="150dp"
+        android:ems="10"
+        android:gravity="center_vertical|center_horizontal"
+        android:hint="Last Name..."
+        android:inputType="textPersonName"
+        android:layout_alignBaseline="@+id/firstNameEntry"
+        android:layout_alignBottom="@+id/firstNameEntry"
+        android:layout_alignParentEnd="true" />
+
+    <EditText
+        android:id="@+id/schoolEntry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/firstNameEntry"
+        android:layout_below="@+id/lastNameEntry"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:gravity="center_vertical|center_horizontal"
+        android:hint="School Name..."
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/gpaEntry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/schoolEntry"
+        android:layout_alignBottom="@+id/schoolEntry"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="25dp"
+        android:layout_toEndOf="@+id/schoolEntry"
+        android:ems="10"
+        android:gravity="center_vertical|center_horizontal"
+        android:hint="GPA..."
+        android:inputType="number|numberDecimal"
+        android:maxLength="4"/>
+
+    <EditText
+        android:id="@+id/ccEntry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lastNameEntry"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:ems="10"
+        android:gravity="center_horizontal|center"
+        android:hint="Credit Card Number..."
+        android:inputType="number"
+        android:digits="0123456789-"
+        android:maxLength="19"/>
+
+    <EditText
+        android:id="@+id/ssnEntry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/ccEntry"
+        android:layout_below="@+id/ccEntry"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:gravity="center_horizontal|center"
+        android:hint="Social Security Number..."
+        android:inputType="number"
+        android:digits="0123456789-"
+        android:maxLength="11"/>
+
+    <Spinner
+        android:id="@+id/dobMonthSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/firstNameEntry"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="25dp"
+        android:gravity="center_vertical|center_horizontal|center" />
+
+    <Spinner
+        android:id="@+id/dobDaySpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/dobMonthSpinner"
+        android:layout_toEndOf="@+id/dobMonthSpinner"
+        android:layout_toStartOf="@+id/registerButton"
+        android:gravity="center_horizontal|center_vertical|center" />
+
+    <EditText
+        android:id="@+id/dobYearEntry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="25dp"
+        android:layout_toEndOf="@+id/dobDaySpinner"
+        android:ems="10"
+        android:gravity="center_vertical|center_horizontal"
+        android:hint="Birth Year..."
+        android:inputType="number"
+        android:layout_alignStart="@+id/registerButton" />
+
+    <EditText
+        android:id="@+id/emailEntry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="11dp"
+        android:ems="10"
+        android:gravity="center_vertical|center_horizontal"
+        android:hint="Email Address..."
+        android:inputType="textEmailAddress"
+        android:layout_below="@+id/dobYearEntry"
+        android:layout_alignStart="@+id/ssnEntry" />
+
+    <EditText
+        android:id="@+id/passwordFirstEntry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/emailEntry"
+        android:layout_below="@+id/emailEntry"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:gravity="center_vertical|center_horizontal"
+        android:hint="Password..."
+        android:inputType="textPassword" />
+
+    <EditText
+        android:id="@+id/verifyPasswordEntry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/passwordFirstEntry"
+        android:layout_below="@+id/passwordFirstEntry"
+        android:ems="10"
+        android:gravity="center_horizontal"
+        android:hint="Verify Password..."
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/cancelButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/dobMonthSpinner"
+        android:layout_marginBottom="11dp"
+        android:text="@string/cancelButton" />
+
+    <Button
+        android:id="@+id/registerButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/cancelButton"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="25dp"
+        android:text="@string/registerButton" />
+</RelativeLayout>

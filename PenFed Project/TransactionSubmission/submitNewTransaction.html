@@ -1,0 +1,51 @@
+<!Doctype html>
+<html>
+    <head>
+        <title>Firebase Transaction Submission</title>
+
+        <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,700" rel="stylesheet">
+
+        <script src = "https://use.fontawesome.com/939e9dd52c.js"></script>
+
+        <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+        <script src="submitNewTransaction.js"></script>
+
+        <link rel="stylesheet" href="style.css"/>
+    </head>
+
+    <body>
+
+        <button style="position:relative; top:50px; left:5%; color:#fff; background:#528bff; width:64px; height:64px; border-radius:100%; line-height:38px;" onclick="window.location.href='./splasScreen.html'"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
+
+        <h1 id="welcomeMessage" style="color:white; text-align:center; width=50%;">Transaction Submission Service </h1>
+
+        <textarea id="emailEntry" placeholder="Enter user's email here..." style="width:50%; text-align:center; margin-left:25%; padding: 15px 0px 15px 0px; height: 46px; margin-top:5%;"></textarea>
+        <br>
+
+        <textarea id="transactionAmountEntry" placeholder="Enter transaction amount here..." style="width:50%; text-align:center; margin-left:25%; padding: 15px 0px 15px 0px; height: 46px; margin-top:5%;"></textarea>
+        <br>
+
+        <textarea id="businessEntry" placeholder="Enter business endpoint here..." style="width:50%; text-align:center; margin-left:25%; padding: 15px 0px 15px 0px; height: 46px; margin-top:5%;"></textarea>
+        <br>
+
+        <button style="position:relative; top:100px; left:95%; color:#fff; background:#528bff; width:64px; height:64px; border-radius:100%; line-height:38px;" onclick=submitTransaction()><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+
+        <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+        <script>
+          // Initialize Firebase
+          var config = {
+            apiKey: "AIzaSyCHSTmmzHz41FMzHCKHRgRlHhF0N--Abto",
+            authDomain: "creditcardproject-55172.firebaseapp.com",
+            databaseURL: "https://creditcardproject-55172.firebaseio.com",
+            projectId: "creditcardproject-55172",
+            storageBucket: "creditcardproject-55172.appspot.com",
+            messagingSenderId: "90219470511"
+          };
+          firebase.initializeApp(config);
+        </script>
+
+
+        <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+        <script src="submitNewTransaction.js"></script>
+    </body>
+</html>

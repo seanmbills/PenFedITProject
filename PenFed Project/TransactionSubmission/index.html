@@ -1,0 +1,63 @@
+<!Doctype html>
+<html>
+    <head>
+        <title>Firebase Transaction Submission</title>
+
+        <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,700" rel="stylesheet">
+
+        <script src = "https://use.fontawesome.com/939e9dd52c.js"></script>
+
+        <link rel="stylesheet" href="style.css"/>
+    </head>
+
+    <body>
+        <!--<div class="mainDiv" align = "right">
+            <h1 id="fireHeading" align = "left" style="text-align:center;">Firebase Transaction Submission</h1>
+            <textarea id="mainText" placeholder="Enter text here..."></textarea>
+            <button id="submitButton" onclick="submitClick()" style="border-radius:100%; width:64px;"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+        </div>-->
+
+        <!--<h1 id="welcomeMessage" style="color:white; text-align:center; width=50%;">Transaction Submission Service </h1>
+        -->
+
+        <button style="position:relative; top:50px; left:5%; color:#fff; background:#528bff; width:64px; height:64px; border-radius:100%; line-height:38px;" onclick="window.location.href='./splasScreen.html'"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
+
+        <div class="mainDiv" align="left">
+            <h1> All Transactions </h1>
+            <table>
+                <thead>
+                    <tr style="text-align:center;">
+                        <td>Date</td>
+                        <td>Account</td>
+                        <td>Amount</td>
+                        <td>Point of Sale</td>
+                        <td>Status</td>
+                        <td>Action</td>
+                    </tr>
+                </thead>
+                <tbody id="table_body">
+
+                </tbody>
+            </table>
+        </div>
+
+
+        <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+        <script>
+          // Initialize Firebase
+          var config = {
+            apiKey: "AIzaSyCHSTmmzHz41FMzHCKHRgRlHhF0N--Abto",
+            authDomain: "creditcardproject-55172.firebaseapp.com",
+            databaseURL: "https://creditcardproject-55172.firebaseio.com",
+            projectId: "creditcardproject-55172",
+            storageBucket: "creditcardproject-55172.appspot.com",
+            messagingSenderId: "90219470511"
+          };
+          firebase.initializeApp(config);
+        </script>
+
+
+        <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+        <script src="index.js"></script>
+    </body>
+</html>

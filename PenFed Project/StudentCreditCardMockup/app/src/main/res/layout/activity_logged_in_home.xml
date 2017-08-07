@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/logoutButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:text="@string/logoutButton" />
+
+    <Button
+        android:id="@+id/settingsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:text="@string/settings" />
+
+    <TextView
+        android:id="@+id/dailySpendingText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="17dp"
+        android:fontFamily="sans-serif"
+        android:text="@string/dailySpending"
+        android:textSize="30sp" />
+
+    <ProgressBar
+        android:id="@+id/dailySpendingProgress"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="325dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/dailySpendingText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="22dp"
+        android:scaleY="5" />
+
+    <TextView
+        android:id="@+id/balanceText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="19dp"
+        android:text="@string/currentBalance"
+        android:textSize="30sp"
+        android:layout_below="@+id/dailyLimitText"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/currentBalance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/balanceText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:clickable="true"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/rewardsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="17dp"
+        android:text="@string/rewards"
+        android:textSize="30sp"
+        android:layout_below="@+id/creditAvailText"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/dailyLimitText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dailySpendingProgress"
+        android:layout_toEndOf="@+id/balanceText"
+        android:layout_marginLeft="5dp"/>
+
+    <TextView
+        android:id="@+id/rateText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cash Back Rate:"
+        android:textSize="18sp"
+        android:layout_below="@+id/cashBack"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="85dp"/>
+
+    <TextView
+        android:id="@+id/cashBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cash Back to Date:"
+        android:textSize="18sp"
+        android:layout_below="@+id/rewardsText"
+        android:layout_centerHorizontal="true"/>
+
+    <Button
+        android:id="@+id/rewardsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/logoutButton"
+        android:layout_centerHorizontal="true"
+        android:text="@string/rewards" />
+
+    <TextView
+        android:id="@+id/creditAvailText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/currentBalance"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="@string/creditAvailable" />
+
+    <TextView
+        android:id="@+id/dailySpendingField"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/creditAvailText"
+        android:layout_below="@+id/dailyLimitText"
+        android:text="@string/spentToday" />
+
+    <TextView
+        android:id="@+id/cashBackToDateField"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cashBack"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:textSize="48sp"/>
+
+    <TextView
+        android:id="@+id/cashBackRateField"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rateText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="21dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:textSize="30sp"/>
+
+
+</RelativeLayout>
