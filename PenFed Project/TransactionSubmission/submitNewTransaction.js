@@ -1,4 +1,4 @@
-var rootRef = firebase.database().ref().child("Users");
+
     // rootRef.on("child_added", snap => {
     //     var name = snap.child("firstName").val();
     //     var userEmail = snap.child("email").val();
@@ -6,14 +6,14 @@ var rootRef = firebase.database().ref().child("Users");
     //     var school = snap.child("schoolName").val();
     //     var userId = snap.child("accId").val();
 
-    rootRef.once("value").then(function(snapshot) {
-        snapshot.forEach(function(childSnapshot) {
-            var hasEmail = childSnapshot.hasChild("email");
-            alert("Has Email: " + hasEmail);
-            var child = childSnapshot.child("email").val();
-            alert(child);
-        })
-    })
+    // rootRef.once("value").then(function(snapshot) {
+    //     snapshot.forEach(function(childSnapshot) {
+    //         var hasEmail = childSnapshot.hasChild("email");
+    //         alert("Has Email: " + hasEmail);
+    //         var child = childSnapshot.child("email").val();
+    //         alert(child);
+    //     })
+    // })
 
     //     alert(name + userEmail + password + school + userId + "\nDocument ready...");
 
@@ -48,6 +48,17 @@ function submitTransaction() {
     //         alert(childEmail);
     //     });
     // });
+
+    var rootRef = firebase.database().ref().child("Users");
+
+    rootRef.once("value").then(function(snapshot) {
+        snapshot.forEach(function(childSnapshot) {
+            var hasEmail = childSnapshot.hasChild("email");
+            alert("Has Email: " + hasEmail);
+            var child = childSnapshot.child("email").val();
+            alert(child);
+        })
+    })
 
     // rootRef.on("child_added", snap => {
     //     var name = snap.child("firstName").val();

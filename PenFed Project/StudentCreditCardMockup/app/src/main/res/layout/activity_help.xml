@@ -101,29 +101,39 @@
         android:layout_height="wrap_content" />
 
     <TextView
-        android:id="@+id/textView32"
+        android:id="@+id/memberService"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="@string/needHelpText"/>
 
     <TextView
-        android:id="@+id/textView31"
+        android:id="@+id/domesticContact"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="@string/phoneNumberDomestic"/>
 
     <TextView
-        android:id="@+id/textView30"
+        android:id="@+id/overseasDial"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="@string/overseasDial"/>
 
     <TextView
-        android:id="@+id/textView29"
+        android:id="@+id/overseasNumber"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="@string/phoneNumberInternational"/>
 
     <TextView
-        android:id="@+id/textView28"
+        android:id="@+id/emailContact"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="@string/PenFedEmailText"/>
 
     <TextView
         android:id="@+id/textView8"

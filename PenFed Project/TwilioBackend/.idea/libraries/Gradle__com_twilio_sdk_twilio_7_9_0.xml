@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.twilio.sdk:twilio:7.9.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.twilio.sdk/twilio/7.9.0/f182852a43a766b97fc5fe6ccfdcf245799bdee/twilio-7.9.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.twilio.sdk/twilio/7.9.0/994c8f135087deb39a44b8cedeb9c65adca611c3/twilio-7.9.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

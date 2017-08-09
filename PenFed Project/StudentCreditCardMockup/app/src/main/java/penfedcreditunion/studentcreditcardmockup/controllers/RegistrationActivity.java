@@ -24,6 +24,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -31,9 +32,16 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.FormBody;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
 import penfedcreditunion.studentcreditcardmockup.R;
 import penfedcreditunion.studentcreditcardmockup.model.Account;
 import penfedcreditunion.studentcreditcardmockup.model.Transaction;
+
 
 /**
  * Created by SEAN on 7/31/17.
@@ -64,10 +72,16 @@ public class RegistrationActivity extends AppCompatActivity {
     private String month;
     private Integer day;
 
+    private OkHttpClient mClient = new OkHttpClient();
+
+    private Context mContext;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+
+        mContext = getApplicationContext();
 
         progressDialog = new ProgressDialog(this);
         registerButton = (Button) findViewById(R.id.registerButton);
@@ -290,6 +304,37 @@ public class RegistrationActivity extends AppCompatActivity {
                                     userDB.child("completedTransactions").push().setValue(t);
                                 }
                             }
+
+//                            try {
+//                                post("https://94a3c75b.ngrok.io/sms", new  Callback(){
+//
+//                                    @Override
+//                                    public void onFailure(Call call, IOException e) {
+//                                        e.printStackTrace();
+//                                    }
+//
+//                                    @Override
+//                                    public void onResponse(Call call, Response response) throws IOException {
+//                                        runOnUiThread(new Runnable() {
+//                                            @Override
+//                                            public void run() {
+//                                                Toast.makeText(getApplicationContext(),"SMS Sent!",Toast.LENGTH_SHORT).show();
+//                                            }
+//                                        });
+//                                    }
+//                                });
+//                            } catch (IOException e) {
+//                                e.printStackTrace();
+//                            }
+
+//                            Twilio.init("AC1c09fe8029a4302f6870fd0d9286e3a6", "2b6abab218e300dfa1550f89c4fdf98f");
+//
+//                            Message message = Message.creator(new PhoneNumber("+15558675309"),
+//                                    new PhoneNumber("+17034704997"),
+//                                    "This is the ship that made the Kessel Run in fourteen parsecs?").create();
+
+//                            System.out.println(message.getSid());
+
                             progressDialog.dismiss();
                             Intent i = new Intent(RegistrationActivity.this, LoggedInActivity.class);
                             startActivity(i);
@@ -301,6 +346,21 @@ public class RegistrationActivity extends AppCompatActivity {
                     }
                 });
         return registerBool;
+    }
+
+    Call post(String url, Callback callback) throws IOException {
+        RequestBody formBody = new FormBody.Builder()
+                .add("To", "+17034704997")
+                .add("Body", "This is a test text message.")
+                .build();
+        Request request = new Request.Builder()
+                .url(url)
+                .post(formBody)
+                .build();
+
+        Call response = mClient.newCall(request);
+        response.enqueue(callback);
+        return response;
     }
     /**
      * Formats the watched EditText to a credit card number

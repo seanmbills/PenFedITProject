@@ -37,4 +37,10 @@
     <string name="creditAvailableHistory">Credit Available: </string>
     <string name="business">Business:</string>
     <string name="backButton">BACK</string>
+    <string name="needHelpText">Member Service: 800-247-5626</string>
+    <string name="phoneNumberDomestic"></string>
+    <string name="PenFedEmailText">PenFed Email: mobilebanking@penfed.org</string>
+    <string name="overseasDial">Overseas Direct Dial: 541-225-6700</string>
+    <string name="phoneNumberInternational"></string>
+    <string name="penfedEmail"></string>
 </resources>
