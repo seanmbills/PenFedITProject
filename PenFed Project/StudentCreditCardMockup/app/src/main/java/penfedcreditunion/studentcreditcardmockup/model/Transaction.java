@@ -11,6 +11,7 @@ public class Transaction {
     public String transactionDate;
     public String businessEndpoint;
     public String status;
+    public TransactionType type;
 
     /**
      * default no-arg constructor
@@ -28,11 +29,12 @@ public class Transaction {
      * @param status the status of the transaction ("PENDING", "COMPLETE")
      */
     public Transaction(double transactionAmount, String transactionDate, String businessEndpoint,
-                       String status) {
+                       String status, TransactionType type) {
         this.transactionAmount = transactionAmount;
         this.transactionDate = transactionDate;
         this.businessEndpoint = businessEndpoint;
         this.status = status;
+        this.type = type;
     }
 
     /**
@@ -62,4 +64,6 @@ public class Transaction {
     public String getBusinessEndpoint() {
         return businessEndpoint;
     }
+
+    public TransactionType getType() { return type; }
 }

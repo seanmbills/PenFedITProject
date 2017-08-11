@@ -61,7 +61,7 @@ public class HelpMenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Context context = v.getContext();
-                Intent intent = new Intent(context, RegistrationActivity.class);
+                Intent intent = new Intent(context, RegistrationNameActivity.class);
                 context.startActivity(intent);
             }
         });

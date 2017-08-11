@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent" android:layout_height="match_parent">
 
     <Button
         android:id="@+id/logoutButton"
@@ -41,23 +42,33 @@
 
     <TextView
         android:id="@+id/balanceText"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="19dp"
+        android:layout_below="@+id/dailySpendingField"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:clickable="true"
+        android:gravity="center_vertical|center_horizontal"
         android:text="@string/currentBalance"
-        android:textSize="30sp"
-        android:layout_below="@+id/dailyLimitText"
-        android:layout_centerHorizontal="true" />
+        android:textSize="30sp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/dailySpendingField"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:background="@color/common_google_signin_btn_text_dark_disabled"/>
 
     <TextView
         android:id="@+id/currentBalance"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/balanceText"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp"
         android:clickable="true"
-        android:textSize="30sp" />
+        android:gravity="center_vertical|center_horizontal"
+        android:textSize="36sp"
+        android:layout_below="@+id/balanceText"
+        android:layout_alignParentStart="true"/>
 
     <TextView
         android:id="@+id/rewardsText"
@@ -74,8 +85,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/dailySpendingProgress"
-        android:layout_toEndOf="@+id/balanceText"
-        android:layout_marginLeft="5dp"/>
+        android:layout_alignEnd="@+id/dailySpendingProgress"
+        android:layout_marginEnd="10dp"/>
 
     <TextView
         android:id="@+id/rateText"
@@ -83,9 +94,8 @@
         android:layout_height="wrap_content"
         android:text="Cash Back Rate:"
         android:textSize="18sp"
-        android:layout_below="@+id/cashBack"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="85dp"/>
+        android:layout_below="@+id/cashBackToDateField"
+        android:layout_centerHorizontal="true"/>
 
     <TextView
         android:id="@+id/cashBack"
@@ -106,20 +116,30 @@
 
     <TextView
         android:id="@+id/creditAvailText"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/currentBalance"
         android:layout_centerHorizontal="true"
+        android:clickable="true"
         android:gravity="center_vertical|center_horizontal"
-        android:text="@string/creditAvailable" />
+        android:text="@string/creditAvailable"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/creditAvailText"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:background="@color/common_google_signin_btn_text_dark_disabled"/>
 
     <TextView
         android:id="@+id/dailySpendingField"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/creditAvailText"
         android:layout_below="@+id/dailyLimitText"
-        android:text="@string/spentToday" />
+        android:gravity="center_vertical|center_horizontal"
+        android:text="@string/spentToday"/>
 
     <TextView
         android:id="@+id/cashBackToDateField"
@@ -140,6 +160,16 @@
         android:layout_marginTop="21dp"
         android:gravity="center_vertical|center_horizontal"
         android:textSize="30sp"/>
+
+    <TextView
+        android:id="@+id/additionalCashBackText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/rewardsButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="5dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:textSize="18sp"/>
 
 
 </RelativeLayout>

@@ -44,6 +44,8 @@ public class LoggedInActivity extends AppCompatActivity {
     private TextView dailySpending;
     private TextView cashBackToDate;
     private TextView cashBackRate;
+    private TextView additionalCashBack;
+    private TextView balanceText;
 
     private ProgressBar dailyProgress;
 
@@ -77,6 +79,8 @@ public class LoggedInActivity extends AppCompatActivity {
         dailySpending = (TextView) findViewById(R.id.dailySpendingField);
         cashBackToDate = (TextView) findViewById(R.id.cashBackToDateField);
         cashBackRate = (TextView) findViewById(R.id.cashBackRateField);
+        additionalCashBack = (TextView) findViewById(R.id.additionalCashBackText);
+        balanceText = (TextView) findViewById(R.id.balanceText);
 
         dailyProgress = (ProgressBar) findViewById(R.id.dailySpendingProgress);
 
@@ -93,6 +97,22 @@ public class LoggedInActivity extends AppCompatActivity {
         date = new Date();
 
         currBalance.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Context context = v.getContext();
+                Intent intent = new Intent(context, TransactionHistoryActivity.class);
+                context.startActivity(intent);
+            }
+        });
+        creditAvailable.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Context context = v.getContext();
+                Intent intent = new Intent(context, TransactionHistoryActivity.class);
+                context.startActivity(intent);
+            }
+        });
+        balanceText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Context context = v.getContext();
@@ -118,6 +138,9 @@ public class LoggedInActivity extends AppCompatActivity {
                             dailyLimit.setText(formatter.format(tempAccount.dailyLimit));
 
                             cashBackRate.setText(decimalFormatter.format(tempAccount.cashBackRate) + "%");
+                            if (tempAccount.gpa >= 3.00) {
+                                additionalCashBack.setText("(Additional 1% cash back on Gas and Dining)");
+                            }
                             double cashBack = tempAccount.getCashBackToDate();
                             cashBackToDate.setText(formatter.format(cashBack));
                             mDatabase.child(user.getUid()).child("cashBackToDate").setValue(cashBack);

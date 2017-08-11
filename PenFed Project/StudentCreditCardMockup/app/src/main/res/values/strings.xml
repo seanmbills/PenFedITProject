@@ -43,4 +43,9 @@
     <string name="overseasDial">Overseas Direct Dial: 541-225-6700</string>
     <string name="phoneNumberInternational"></string>
     <string name="penfedEmail"></string>
+    <string name="nextButton">NEXT</string>
+    <string name="dobHeader">Date of Birth</string>
+    <string name="ccInfo">Credit Card Information</string>
+    <string name="loginCredentials">Login Credentials</string>
+    <string name="finishButton">FINISH</string>
 </resources>

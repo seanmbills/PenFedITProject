@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/schoolNameEntry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="145dp"
+        android:ems="15"
+        android:gravity="center_vertical|center_horizontal"
+        android:hint="School Name..."
+        android:inputType="textPersonName"/>
+
+    <EditText
+        android:id="@+id/gpaEntry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/schoolNameEntry"
+        android:layout_centerHorizontal="true"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="70dp"
+        android:ems="10"
+        android:gravity="center_vertical|center_horizontal"
+        android:hint="GPA..."
+        android:inputType="number|numberDecimal"
+        android:maxLength="4"/>
+
+    <Button
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:text="@string/backButton"/>
+
+    <Button
+        android:id="@+id/nextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:text="@string/nextButton"/>
+
+</RelativeLayout>

@@ -118,12 +118,20 @@ public class Account {
         double totalCashBack = 0.0;
         if (completedTransactions != null) {
             for (Transaction t : completedTransactions.values()) {
-                totalCashBack += (t.transactionAmount * (cashBackRate / 100));
+                if (t.type == TransactionType.GAS || t.type == TransactionType.DINING) {
+                    totalCashBack += (t.transactionAmount * ((cashBackRate + 1.00) / 100));
+                } else {
+                    totalCashBack += (t.transactionAmount * (cashBackRate / 100));
+                }
             }
         }
         if (pendingTransactions != null) {
             for (Transaction t : pendingTransactions.values()) {
-                totalCashBack += (t.transactionAmount * (cashBackRate / 100));
+                if (t.type == TransactionType.GAS || t.type == TransactionType.DINING) {
+                    totalCashBack += (t.transactionAmount * ((cashBackRate + 1.00) / 100));
+                } else {
+                    totalCashBack += (t.transactionAmount * (cashBackRate / 100));
+                }
             }
         }
         return totalCashBack;

@@ -72,6 +72,52 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".controllers.RegistrationNameActivity"
+                  android:label=""
+                  android:parentActivityName=".controllers.HelpMenuActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".controllers.RegistrationSchoolActivity"
+                  android:label=""
+                  android:parentActivityName=".controllers.RegistrationNameActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".controllers.RegistrationBirthActivity"
+                  android:label=""
+                  android:parentActivityName=".controllers.RegistrationSchoolActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".controllers.RegistrationAccountActivity"
+                  android:label=""
+                  android:parentActivityName=".controllers.RegistrationBirthActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".controllers.RegistrationLoginActivity"
+                  android:label=""
+                  android:parentActivityName=".controllers.RegistrationAccountActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
     </application>
 
 </manifest>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/firstNameEntry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:width="250dp"
+        android:ems="10"
+        android:gravity="center_horizontal|center"
+        android:hint="First Name..."
+        android:inputType="textPersonName"
+        android:layout_marginBottom="64dp"
+        android:layout_above="@+id/lastNameEntry"
+        android:layout_centerHorizontal="true"/>
+
+    <EditText
+        android:id="@+id/lastNameEntry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="25dp"
+        android:width="250dp"
+        android:ems="10"
+        android:gravity="center_vertical|center_horizontal"
+        android:hint="Last Name..."
+        android:inputType="textPersonName"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/firstNameEntry"
+        android:layout_marginBottom="219dp"/>
+
+    <Button
+        android:id="@+id/nextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:text="@string/nextButton"/>
+
+    <Button
+        android:id="@+id/cancelButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:text="@string/cancelButton"/>
+</RelativeLayout>

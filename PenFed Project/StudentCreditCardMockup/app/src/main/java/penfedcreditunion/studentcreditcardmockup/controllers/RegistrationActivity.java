@@ -41,6 +41,7 @@ import okhttp3.RequestBody;
 import penfedcreditunion.studentcreditcardmockup.R;
 import penfedcreditunion.studentcreditcardmockup.model.Account;
 import penfedcreditunion.studentcreditcardmockup.model.Transaction;
+import penfedcreditunion.studentcreditcardmockup.model.TransactionType;
 
 
 /**
@@ -133,6 +134,27 @@ public class RegistrationActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 registerUser();
+//                try {
+//                    post("https://6989a2a9.ngrok.io", new  Callback(){
+//
+//                        @Override
+//                        public void onFailure(Call call, IOException e) {
+//                            e.printStackTrace();
+//                        }
+//
+//                        @Override
+//                        public void onResponse(Call call, Response response) throws IOException {
+//                            runOnUiThread(new Runnable() {
+//                                @Override
+//                                public void run() {
+//                                    Toast.makeText(getApplicationContext(),"SMS Sent!",Toast.LENGTH_SHORT).show();
+//                                }
+//                            });
+//                        }
+//                    });
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
             }
         });
 
@@ -268,17 +290,17 @@ public class RegistrationActivity extends AppCompatActivity {
                             SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
                             Date date = new Date();
 
-                            Transaction t1 = new Transaction(50.00, dateFormat.format(date), "PenFed", "PENDING");
-                            Transaction t2 = new Transaction(30.00, dateFormat.format(date), "PenFed", "PENDING");
-                            Transaction t3 = new Transaction(30.00, dateFormat.format(date), "PenFed", "PENDING");
-                            Transaction t4 = new Transaction(30.00, dateFormat.format(date), "PenFed", "PENDING");
-                            Transaction t5 = new Transaction(30.00, dateFormat.format(date), "PenFed", "PENDING");
-                            Transaction t6 = new Transaction(30.00, dateFormat.format(date), "PenFed", "PENDING");
-                            Transaction t7 = new Transaction(30.00, dateFormat.format(date), "PenFed", "PENDING");
-                            Transaction t8 = new Transaction(30.00, dateFormat.format(date), "PenFed", "COMPLETED");
-                            Transaction t9 = new Transaction(30.00, dateFormat.format(date), "PenFed", "COMPLETED");
-                            Transaction t10 = new Transaction(30.00, dateFormat.format(date), "PenFed", "COMPLETED");
-                            Transaction t11 = new Transaction(30.00, dateFormat.format(date), "PenFed", "COMPLETED");
+                            Transaction t1 = new Transaction(50.00, dateFormat.format(date), "PenFed", "PENDING", TransactionType.DINING);
+                            Transaction t2 = new Transaction(30.00, dateFormat.format(date), "PenFed", "PENDING", TransactionType.GAS);
+                            Transaction t3 = new Transaction(30.00, dateFormat.format(date), "PenFed", "PENDING", TransactionType.GROCERIES);
+                            Transaction t4 = new Transaction(30.00, dateFormat.format(date), "PenFed", "PENDING", TransactionType.DINING);
+                            Transaction t5 = new Transaction(30.00, dateFormat.format(date), "PenFed", "PENDING", TransactionType.TRAVEL);
+                            Transaction t6 = new Transaction(30.00, dateFormat.format(date), "PenFed", "PENDING", TransactionType.GAS);
+                            Transaction t7 = new Transaction(30.00, dateFormat.format(date), "PenFed", "PENDING", TransactionType.DINING);
+                            Transaction t8 = new Transaction(30.00, dateFormat.format(date), "PenFed", "COMPLETED", TransactionType.GAS);
+                            Transaction t9 = new Transaction(30.00, dateFormat.format(date), "PenFed", "COMPLETED", TransactionType.TRAVEL);
+                            Transaction t10 = new Transaction(30.00, dateFormat.format(date), "PenFed", "COMPLETED", TransactionType.GROCERIES);
+                            Transaction t11 = new Transaction(30.00, dateFormat.format(date), "PenFed", "COMPLETED", TransactionType.GAS);
 
                             List<Transaction> list = new ArrayList<Transaction>();
                             list.add(t1);
@@ -305,32 +327,10 @@ public class RegistrationActivity extends AppCompatActivity {
                                 }
                             }
 
-//                            try {
-//                                post("https://94a3c75b.ngrok.io/sms", new  Callback(){
+//                            Twilio.init("AC50edc1ea624fdc8659c2c802b2eade7a", "3a7c47d881f69aecbc431eb05436b54c");
 //
-//                                    @Override
-//                                    public void onFailure(Call call, IOException e) {
-//                                        e.printStackTrace();
-//                                    }
-//
-//                                    @Override
-//                                    public void onResponse(Call call, Response response) throws IOException {
-//                                        runOnUiThread(new Runnable() {
-//                                            @Override
-//                                            public void run() {
-//                                                Toast.makeText(getApplicationContext(),"SMS Sent!",Toast.LENGTH_SHORT).show();
-//                                            }
-//                                        });
-//                                    }
-//                                });
-//                            } catch (IOException e) {
-//                                e.printStackTrace();
-//                            }
-
-//                            Twilio.init("AC1c09fe8029a4302f6870fd0d9286e3a6", "2b6abab218e300dfa1550f89c4fdf98f");
-//
-//                            Message message = Message.creator(new PhoneNumber("+15558675309"),
-//                                    new PhoneNumber("+17034704997"),
+//                            Message message = Message.creator(new PhoneNumber("+17034704997"),
+//                                    new PhoneNumber("+12408835148"),
 //                                    "This is the ship that made the Kessel Run in fourteen parsecs?").create();
 
 //                            System.out.println(message.getSid());

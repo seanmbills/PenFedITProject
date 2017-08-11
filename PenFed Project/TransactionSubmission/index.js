@@ -24,7 +24,7 @@ $(document).ready(function() {
             $("#table_body").append("<tr><td>" + transactionDate
                 + "</td><td>" + email + "</td><td>" + transactionAmount
                 + "</td><td>" + business + "</td><td>" + status
-                + "</td><td>" + "<button>Modify</button>" + "</td></tr>");
+                + "</td></tr>");//+ "</td><td>" + "<button>Modify</button>" + "</td></tr>");
         });
 
         var completed = rootRef.child(userId).child("completedTransactions");
